@@ -1,0 +1,19 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div id="page-content-div">
+        <h2>{{ page_heading_2 }}</h2>
+        <p>{{ send_result }}</p>
+        <p>{{ message }}</p>
+        <p>Switch 1: {{ sanitised_switch1value }}</p>
+        <p>Switch 2: {{ sanitised_switch2value }}</p>
+        <p>Switch 3: {{ sanitised_switch3value }}</p>
+        <p>Switch 4: {{ sanitised_switch4value }}</p>
+        <p>Fan details:{{ sanitised_fandetail }}</p>
+        <p>Temperature: {{ sanitised_temperature }}</p>
+        <p>Keypad: {{ sanitised_keypad }}</p>
+        <p>Group_id: {{ sanitised_groupId }}</p>
+    <div id = "link">
+        <p class="curr_page"><a href="{{ landing_page }}">Home</a></p>
+    </div>
+    </div>
+{% endblock %}

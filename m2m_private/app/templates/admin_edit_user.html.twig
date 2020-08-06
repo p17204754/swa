@@ -1,0 +1,28 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div id="page-content-div">
+        <h2>{{ page_heading_2 }}</h2>
+        <p>{{ message }}</p>
+        {% if  user_exists  == true %}
+        <form action="{{ action }}" method="post">
+            <fieldset>
+                <legend>{{ page_title }}</legend>
+                <input type="hidden" name = 'user_id' value="{{ user_id }}">
+                <label for="username">"Username:"</label>
+                <input id="username" name="edited_username" type="text" value="{{ user_name }}" size="10" maxlength="50">
+                <br><br>
+                <label for="email">"Email:"</label>
+                <input id="password" name="edited_email" type="email" value="{{ email }}" size="10" maxlength="50">
+                <br><br>
+                <label for="role">"Role:"</label>
+                <input id="count" name="edited_role" type="text" value="{{ role }}" size="10" maxlength="50">
+                <br><br>
+                <input type="submit" value="Save">
+            </fieldset>
+        </form>
+        {% endif %}
+    <div id = "link">
+        <p class="curr_page"><a href="{{ landing_page }}">Home</a></p>
+    </div>
+    </div>
+{% endblock %}

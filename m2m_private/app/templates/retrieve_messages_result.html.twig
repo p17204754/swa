@@ -1,0 +1,50 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div id="page-content-div">
+        <h2>{{ page_heading_2 }}</h2>
+        <p>{{ message }}</p>
+        <table>
+            <tr>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Received time</th>
+                <th>bearer</th>
+                <th>Message ref</th>
+                <th>Switch 1</th>
+                <th>Switch 2</th>
+                <th>Switch 3</th>
+                <th>Switch 4</th>
+                <th>Fan</th>
+                <th>Temperature</th>
+                <th>keypad</th>
+                <th>Group</th>
+
+            </tr>
+       {% for message in result  %}
+            <tr>
+                <td>{{ message.SOURCEMSISDN }}</td>
+                <td>{{ message.DESTINATIONMSISDN }}</td>
+                <td>{{ message.RECEIVEDTIME }}</td>
+                <td>{{ message.BEARER }}</td>
+                <td>{{ message.MESSAGEREF }}</td>
+                <td>{{ message.MESSAGE['s1'] }}</td>
+                <td>{{ message.MESSAGE['s2'] }}</td>
+                <td>{{ message.MESSAGE['s3'] }}</td>
+                <td>{{ message.MESSAGE['s4'] }}</td>
+                <td>{{ message.MESSAGE['fs'] }}</td>
+                <td>{{ message.MESSAGE['temp'] }}</td>
+                <td>{{ message.MESSAGE['kp'] }}</td>
+                <td>{{ message.MESSAGE['gId'] }}</td>
+                <td><form action="{{ action }}" method="{{ method }}"><button type = "submit" name="store_message" value="{{ message.message_id }}">Store message</button></form></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+        <div id = "link">
+        <p class="curr_page"><a href="{{ landing_page }}">Home</a></p>
+        </div>
+            <div id = "link">
+        <p><a href="{{ view_stored }}">View stored messages</a></p>
+            </div>
+    </div>
+{% endblock %}

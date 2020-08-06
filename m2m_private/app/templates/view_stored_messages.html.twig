@@ -1,0 +1,44 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div id="page-content-div">
+        <h2>{{ page_heading_2 }}</h2>
+        <p>{{ error_messages }}</p>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Sender</th>
+                <th>Destination</th>
+                <th>Bearer</th>
+                <th>Switch 1</th>
+                <th>Switch 2</th>
+                <th>Switch 3</th>
+                <th>Switch 4</th>
+                <th>Fan setting</th>
+                <th>Temperature</th>
+                <th>keypad</th>
+                <th>Group id</th>
+                <th>Time</th>
+            </tr>
+        {% for message in stored_messages %}
+            <tr>
+                <td>{{ message.message_id}}</td>
+                <td>{{ message.message_sender }}</td>
+                <td>{{ message.message_destination }}</td>
+                <td>{{ message.message_bearer }}</td>
+                <td>{{ message.message_switch1 }}</td>
+                <td>{{ message.message_switch2 }}</td>
+                <td>{{ message.message_switch3 }}</td>
+                <td>{{ message.message_switch4 }}</td>
+                <td>{{ message.message_fan }}</td>
+                <td>{{ message.message_temp }}</td>
+                <td>{{ message.message_keypad }}</td>
+                <td>{{ message.message_group }}</td>
+                <td>{{ message.message_time }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    <div id = "link">
+        <p class="curr_page"><a href="{{ landing_page }}">Home</a></p>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div id="lg-form-container">
+        <h2>{{ page_heading_2 }}</h2>
+        <p>{{ store_result_message }}</p>
+        <p>{{  storage_text }}</p>
+        <p>Sender's number:  +{{ message_number }}</p>
+        <p>Destination number: +{{ message_destination }}</p>
+        <p>Received time: {{ message_time }}</p>
+        <p>Message Bearer: {{ message_bearer }}</p>
+        <p>Message reference: {{ message_ref }}</p>
+        <p>Message:</p>
+        <p>Switch settings: </p>
+        <p>Switch 1: {{ message_switch1 }}</p>
+        <p>Switch 2: {{ message_switch2 }}</p>
+        <p>Switch 3: {{ message_switch3 }}</p>
+        <p>Switch 4: {{ message_switch4 }}</p>
+        <p>Other settings</p>
+        <p>Fan: {{ message_fan }}</p>
+        <p>Temperature: {{ message_temp }}</p>
+        <p>Keypad: {{ message_keypad }}</p>
+        <p>Group info</p>
+        <p>Group id: {{ message_group }}</p>
+    <div id = "link">
+        <p><a href="{{ landing_page }}">Another go</a></p>
+    </div>
+    </div>
+{% endblock %}

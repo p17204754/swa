@@ -1,0 +1,30 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div id="page-content-div">
+        <h2>{{ page_heading_2 }}</h2>
+        <form action="{{ action }}" method="{{ method }}">
+            <fieldset>
+                <legend>{{ page_title }}</legend>
+                <label for="username">"username:"</label>
+                <input id="username" name="var_username" type="text" value="" size="10" maxlength="50" placeholder="user1">
+                <br><br>
+                <label for="password">"password:"</label>
+                <input id="password" name="var_password" type="password" value="" size="10" maxlength="50" placeholder="password">
+                <br><br>
+                <label for="count">"Count:"</label>
+                <input id="count" name="var_count" type="text" value="" size="10" maxlength="50" placeholder="0">
+                <br><br>
+                <label for="deviceMsisdn">"Msisdn:"</label>
+                <input id="deviceMsisdn" name="var_deviceMsisdn" type="text" value="" size="10" maxlength="50" placeholder="111111111111">
+                <br><br>
+                <label for="countryCode">"country code:"</label>
+                <input id="countryCode" name="var_countryCode" type="number" placeholder="+44">
+                <br>
+                <input type="submit" value="Retrieve">
+            </fieldset>
+        </form>
+    <div id = "link">
+        <p class="curr_page"><a href="{{ landing_page }}">Home</a></p>
+    </div>
+    </div>
+{% endblock %}

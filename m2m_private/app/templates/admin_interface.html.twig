@@ -1,0 +1,32 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div id="page-content-div">
+        <h2>{{ page_heading_2 }}</h2>
+        <p>{{ message }}</p>
+        <table>
+            <tr>
+                <th>user_id</th>
+                <th>user_name</th>
+                <th>email</th>
+                <th>role</th>
+                <th>Last logged in</th>
+                <th>Last Modified</th>
+            </tr>
+            {% for user in users  %}
+                <tr>
+                    <td>{{ user.user_id }}</td>
+                    <td>{{ user.user_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>{{ user.lastLoggedIn }}</td>
+                    <td>{{ user.lastModified }}</td>
+                    <td><form action="{{ action }}" method="{{ method }}"><button type = "submit" name="user_id" value="{{ user.user_id }}">Edit user</button></form></td>
+                    <td><form action="{{ action2 }}" method="{{ method }}"><button type = "submit" name="user_id" value="{{ user.user_id }}">Delete user</button></form></td>
+                </tr>
+            {% endfor %}
+        </table>
+    <div id = "link">
+        <p class="curr_page"><a href="{{ landing_page }}">Home</a></p>
+    </div>
+    </div>
+{% endblock %}

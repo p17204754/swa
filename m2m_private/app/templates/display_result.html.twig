@@ -1,0 +1,13 @@
+{% extends 'banner.html.twig' %}
+{% block content %}
+    <div id="lg-form-container">
+        <h2>{{ page_heading_2 }}</h2>
+        <p>Result = <b>{{ var_value }}</b></p>
+        <form  action="{{ action }}" method="{{ method }}">
+            <input type="submit" value="Store in database">
+        </form>
+    <div id = "link">
+        <p><a href="{{ landing_page }}">Another go</a></p>
+    </div>
+    </div>
+{% endblock %}

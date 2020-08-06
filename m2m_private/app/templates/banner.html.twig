@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block banner %}
+    <div id="banner-div">
+        <h1>{{ page_heading_1 }}</h1>
+        <p class="cent">
+            Page last updated on <script type="text/javascript">document.write(document.lastModified)</script>
+            <br />
+            Created by the boys
+        </p>
+        <hr class="deepline"/>
+    </div>
+
+
+    <nav>
+        <ul>
+            <li><a href="{{ action5 }}">Download messages</a>  </li>
+            <li><a href="{{ action6 }}">View stored messages</a>  </li>
+            <li><a href="{{ action4 }}">Send a message</a>  </li>
+            <li><a href="{{ action3 }}">Admin</a>  </li>
+            <li><a href="{{ landing_page }}">Home</a>  </li>
+        </ul>
+    </nav>
+
+
+
+    <div id="clear-div"></div>
+{% endblock %}
